@@ -1,12 +1,15 @@
 .accueil {
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - var(--hauteur-header) - var(--hauteur-footer));
+  padding: 32px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 img {
-  max-width: 600px;
-  max-height: 500px;
+  display: block;
+  max-width: min(600px, 90vw);
+  max-height: 60vh;
+  border-radius: 8px;
   object-fit: contain;
 }

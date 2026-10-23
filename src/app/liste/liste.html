@@ -1,8 +1,10 @@
 <div class="liste">
 
+  <h1>Liste des films</h1>
+
   <div class="film-links">
     @for (film of films; track film) {
-      <a (click)="selectFilm(film)">
+      <a [ngClass]="film === selectedFilm ? 'active' : ''" (click)="selectFilm(film)">
         {{ film.title }}
       </a>
     }
@@ -10,8 +12,12 @@
 
   @if (selectedFilm) {
     <div class="selected-film">
-      <h2>{{ selectedFilm.title }}</h2>
       <img [src]="selectedFilm.image" [alt]="selectedFilm.title">
+
+      <div class="details">
+        <h2>{{ selectedFilm.title | uppercase }}</h2>
+        <p>{{ selectedFilm.year }} · {{ selectedFilm.director }}</p>
+      </div>
     </div>
   }
 

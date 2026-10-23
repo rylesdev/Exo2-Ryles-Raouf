@@ -1,47 +1,98 @@
 .contact {
+  min-height: calc(100vh - var(--hauteur-header) - var(--hauteur-footer));
+  padding: 40px 16px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 40px;
 }
 
 form {
-  width: 400px;
+  width: 440px;
+  max-width: 100%;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  border-radius: 8px;
+  background-color: var(--surface);
+  border: 1px solid var(--bordure);
+}
+
+h1 {
+  font-size: 24px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+}
+
+label {
+  font-size: 14px;
+  color: var(--texte-doux);
 }
 
 input,
 textarea {
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--texte);
+  background-color: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: var(--rouge);
 }
 
 textarea {
-  height: 120px;
+  height: 110px;
   resize: vertical;
 }
 
 .checkbox {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: var(--texte);
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  accent-color: var(--accent);
 }
 
 button {
+  margin-top: 8px;
   padding: 12px;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 15px;
+  color: white;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-fonce);
 }
 
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.4;
 }

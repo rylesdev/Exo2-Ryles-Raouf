@@ -1,22 +1,37 @@
 header {
-  height: 70px;
-  background-color: #242424;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: var(--hauteur-header);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--bordure);
 }
 
 nav {
   display: flex;
-  gap: 50px;
+  gap: 40px;
+  height: 100%;
 }
 
 a {
-  color: white;
+  display: flex;
+  align-items: center;
+  color: var(--texte-doux);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--texte);
+}
+
+a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }

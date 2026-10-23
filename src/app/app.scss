@@ -1,9 +1,9 @@
 .app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .content {
-  flex: 1;
+  min-height: 100vh;
+  padding-top: var(--hauteur-header);
+  padding-bottom: var(--hauteur-footer);
 }

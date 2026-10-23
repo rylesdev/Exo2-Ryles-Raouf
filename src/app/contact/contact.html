@@ -1,66 +1,42 @@
 <div class="contact">
 
-  <h1>Contact</h1>
-
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
+    <h1>Contact</h1>
+
     <div class="field">
-      <label for="firstName">Prénom</label>
-      <input
-        id="firstName"
-        type="text"
-        formControlName="firstName">
+      <label for="firstName">Prénom *</label>
+      <input id="firstName" type="text" formControlName="firstName">
     </div>
 
     <div class="field">
-      <label for="lastName">Nom</label>
-      <input
-        id="lastName"
-        type="text"
-        formControlName="lastName">
+      <label for="lastName">Nom *</label>
+      <input id="lastName" type="text" formControlName="lastName">
     </div>
 
     <div class="field">
       <label for="age">Âge</label>
-      <input
-        id="age"
-        type="number"
-        formControlName="age">
+      <input id="age" type="number" formControlName="age">
     </div>
 
-    <div class="checkbox">
-      <input
-        id="hideEmail"
-        type="checkbox"
-        formControlName="hideEmail"
-        (change)="changeHideEmail()">
-
-      <label for="hideEmail">Hide</label>
-    </div>
+    <label class="checkbox" for="hideEmail">
+      <input id="hideEmail" type="checkbox" formControlName="hideEmail" (change)="changeHideEmail()">
+      Hide
+    </label>
 
     @if (!contactForm.controls.hideEmail.value) {
       <div class="field">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          formControlName="email">
+        <label for="email">Email *</label>
+        <input id="email" type="email" formControlName="email">
       </div>
     }
 
     <div class="field">
-      <label for="comment">Commentaire</label>
-      <textarea
-        id="comment"
-        formControlName="comment">
-      </textarea>
+      <label for="comment">Commentaire *</label>
+      <textarea id="comment" formControlName="comment"></textarea>
     </div>
 
-    <button
-      type="submit"
-      [disabled]="!contactForm.valid">
-      Envoyer
-    </button>
+    <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
 
   </form>
 

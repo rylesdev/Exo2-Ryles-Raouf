@@ -1,18 +1,52 @@
 .gestion {
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - var(--hauteur-header) - var(--hauteur-footer));
+  padding: 40px 16px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.contact-info {
-  width: 400px;
-  padding: 25px;
-  border: 1px solid #cccccc;
+.carte {
+  width: 480px;
+  max-width: 100%;
+  padding: 32px;
   border-radius: 8px;
+  background-color: var(--surface);
+  border: 1px solid var(--bordure);
 }
 
-.not-found {
-  text-align: center;
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+dt,
+dd {
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--bordure);
+}
+
+dt {
+  color: var(--texte-doux);
+  font-size: 14px;
+}
+
+dd {
+  overflow-wrap: anywhere;
+}
+
+.vide {
+  color: var(--texte-doux);
+  font-style: italic;
+}
+
+.commentaire {
+  white-space: pre-line;
 }

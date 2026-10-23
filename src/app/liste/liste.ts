@@ -1,38 +1,53 @@
 import { Component } from '@angular/core';
+import { NgClass, UpperCasePipe } from '@angular/common';
+import { Film } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-liste',
-  imports: [],
+  imports: [
+    NgClass,
+    UpperCasePipe
+  ],
   templateUrl: './liste.html',
-  styleUrl: './liste.scss',
+  styleUrl: './liste.scss'
 })
 export class Liste {
-  public films = [
+  public films: Film[] = [
     {
       title: 'The Dark Knight',
-      image: '/images/films/dark-knight.jpg',
+      year: 2008,
+      director: 'Christopher Nolan',
+      image: '/images/films/dark-knight.jpg'
     },
     {
       title: 'Interstellar',
-      image: '/images/films/interstellar.jpg',
+      year: 2014,
+      director: 'Christopher Nolan',
+      image: '/images/films/interstellar.jpg'
     },
     {
       title: 'Fight Club',
-      image: '/images/films/fight-club.jpg',
+      year: 1999,
+      director: 'David Fincher',
+      image: '/images/films/fight-club.jpg'
     },
     {
       title: 'Pulp Fiction',
-      image: '/images/films/pulp-fiction.jpg',
+      year: 1994,
+      director: 'Quentin Tarantino',
+      image: '/images/films/pulp-fiction.jpg'
     },
     {
       title: 'Blade Runner 2049',
-      image: '/images/films/blade-runner.jpg',
-    },
+      year: 2017,
+      director: 'Denis Villeneuve',
+      image: '/images/films/blade-runner.jpg'
+    }
   ];
 
-  public selectedFilm: any = null;
+  public selectedFilm: Film | null = null;
 
-  public selectFilm(film: any) {
+  public selectFilm(film: Film) {
     this.selectedFilm = film;
   }
 }
